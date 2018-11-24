@@ -63,7 +63,11 @@
  * }
  */
 
-// ...
+const yelling = array => {
+  return array.map(uppercase => {
+    return uppercase.toUpperCase()
+  })
+}
 
 /**
  *
@@ -72,7 +76,11 @@
  * the numbers multiplied by 2
  */
 
-// ...
+const doubleTrouble = array => {
+  return array.map(number => {
+    return number * 2
+  })
+}
 
 /*
  * Define a function stringyIndexes() that takes an array of
@@ -80,22 +88,33 @@
  * suffixed with " is at index X" where X is the index of the element
  */
 
-// ...
+const stringyIndexes = array => {
+  return array.map((string, index) => {
+    return `${string} is at index ${index}`
+  })
+}
 
 /*
  * Define a function onlyTheEvenSurvive that accepts an array of
  * numbers and returns only the elements that are even
  */
 
-// ...
+const onlyTheEvenSurvive = array => {
+  return array.filter(number => number % 2 === 0)
+}
 
 /*
  * Define a function onlyTheEvenIndexedSurvive that accepts an array of
  * numbers and returns only the elements at indexes that are even
  */
 
-// ...
-
+const onlyTheEvenIndexedSurvive = array => {
+  return array.filter((value, index) => {
+    if (index % 2 === 0) {
+      return value
+    }
+  })
+}
 /*
  * Define a function bestMoviesOfTheYear that accepts an array of
  * movie objects AND a year and returns the names of movies that are
@@ -110,7 +129,25 @@
  * }
  */
 
-// ...
+const bestMoviesOfTheYear = (movies, year) => {
+  //
+  // filter the objects to match the years
+  // filter those matches to the score
+  // return objects that meet both matches
+  //
+
+  let moviesScore = movies.filter(movie => {
+    return movie.score > 90
+  })
+
+  let moviesYear = moviesScore.filter(movie => {
+    return movie.year === year
+  })
+
+  return moviesYear.map(movie => {
+    return movie.name
+  })
+}
 
 /*
  * Define a function everyoneIsOdd that accepts an array of
@@ -118,7 +155,15 @@
  * odd.
  */
 
-// ...
+const everyoneIsOdd = array => {
+  // filter through array to check if ALL numbers are odd
+  // if they are ALL odd return true
+  //
+  // Every
+  return array.every(odds => {
+    return odds % 2 === 1
+  })
+}
 
 /*
  * Define a function findTheNeedle that accepts an array of
@@ -126,7 +171,11 @@
  * `needle` inside
  */
 
-// ...
+const findTheNeedle = array => {
+  return array.find(needle => {
+    return needle.includes('needle')
+  })
+}
 
 /*
  * Define a function findTheNeedleIndex that accepts an array of
@@ -134,7 +183,13 @@
  *  the word `needle` inside
  */
 
-// ...
+const findTheNeedleIndex = array => {
+  return array.indexOf(
+    array.find(needle => {
+      return needle.includes('needle')
+    })
+  )
+}
 
 /*
  * Define a function someoneToLove that accepts an array of
@@ -142,7 +197,34 @@
  * four characters long
  */
 
-// ...
+// let isFourCharactersLong = x => {
+//   return x === 4
+// }
+
+// const someoneToLove = array => {
+//   return array.some(isFourCharactersLong)
+// }
+
+const someoneToLove = array => {
+  let answer = false
+  array.map(string => {
+    if (string.length === 4) {
+      answer = !answer
+    }
+  })
+  return answer
+}
+
+// const someoneToLove = array => {
+//   array.forEach(strings => {
+//     strings.some()
+//     // if (strings.length === 4) {
+//     //   return true
+//     // } else {
+//     //   return false
+//     // }
+//   })
+// }
 
 /*
  * Define a function mapYourself that accepts an array of
