@@ -17,3 +17,6 @@ expanded and reinforced my knowledge into Javascript iteration<br/>
 <br/>
 <strong>Technologies Used</strong><br/>
 javascript<br/>
+
+https://www.javascript.com/ <br/>
+https://reactjs.org/
